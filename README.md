@@ -53,6 +53,11 @@ crawlForMatchingWebsites https://www.srilanka.travel/,http://tourismmin.gov.lk/w
 To exit from the running container, use the exit command.
 
 ## Run application as a Node application
+Install the application dependencies using the following command.
+```
+npm install
+```
+
 To check database connections, run the following command in the project root directory.
 ```
 node src/index.js --check
