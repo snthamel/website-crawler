@@ -14,11 +14,13 @@ MySQL is required for storing the locations list used by the application. For in
 
 ## Setup
 
+A list of keywords as a text file and the locations list as a MySQL table is required to check each website for matching content.
+
 Sample keywords and locations datasets can be found in `sample_data` directory, or you can use your own datasets.
 
 > NOTE: When creating your own locations data table, make sure to have location names under `name` column.
 
-All the environment variables related to database connections and keyword file path can be set as `.env` file in the project root directory. You can use the `env-example` as a reference.
+All the environment variables related to database connections and keyword file path are mandatory for application execution and can be set as `.env` file in the project root directory. You can use the `env-example` as a reference.
 
 > NOTE: When setting the keywords file path, make sure the set it relative to the project root directoryl
 
@@ -32,7 +34,7 @@ docker build . -t website-crawler
 
 To start the container, run the following command.
 ```
-docker run -v $PWD/src/output:/usr/src/app/src/output -v $PWD/src/logs:/usr/src/app/logs -it website-crawler bash
+docker run -v $PWD/src/output:/usr/src/app/src/output -v $PWD/src/logs:/usr/src/app/logs --env-file .env -it website-crawler bash
 ```
 
 Within the container, run the following command to check the database connection status.
@@ -77,3 +79,7 @@ Application output file can be found in the following path.
 ```
 <root-directory>/src/output/output.txt
 ```
+
+### Additional Notes
+
+- The instructions in robots.txt files were not obeyed for POC purpose

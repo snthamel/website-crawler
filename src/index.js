@@ -28,8 +28,24 @@ const output = [];
 let crawledUrls = [];
 
 const checkConnections = async () => {
-    await mysqlDbClient.query("show status like 'Conn%';");
-    await mysqlDbClient.query("SELECT * FROM locations LIMIT 10;");
+    await new Promise((resolve, reject) => {
+        mysqlDbClient.query(
+            `show status like 'Conn%';`,
+            (err) => {
+                if (err) return reject(err);
+                resolve();
+            }
+        );
+    });
+    await new Promise((resolve, reject) => {
+        mysqlDbClient.query(
+            `SELECT name FROM ${mysql_db_table_name} LIMIT 10;`,
+            (err) => {
+                if (err) return reject(err);
+                resolve();
+            }
+        );
+    });
     log.info(`MySQL database successfully connected`);
 };
 
