@@ -1,0 +1,32 @@
+{
+  "name": "website-crawler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snthamel/website-crawler.git"
+  },
+  "keywords": [
+    "crawler",
+    "nodejs"
+  ],
+  "author": "Shehan Thamel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snthamel/website-crawler/issues"
+  },
+  "homepage": "https://github.com/snthamel/website-crawler#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "cli-progress": "^3.9.0",
+    "command-line-args": "^5.1.1",
+    "dotenv": "^9.0.2",
+    "got": "^10.4.0",
+    "mysql": "^2.18.1",
+    "winston": "^3.3.3"
+  }
+}
