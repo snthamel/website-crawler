@@ -1,6 +1,6 @@
 # Website Crawler
 
-A Node.js cli application which crawl through websites in search of keywords and locations
+A Node.js CLI application which crawl through websites in search of keywords and locations
 
 ## Requirements
 
