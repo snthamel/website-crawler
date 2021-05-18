@@ -2,8 +2,6 @@ require("dotenv").config();
 
 const CONFIG = {};
 
-CONFIG.app = process.env.APP || 'dev'
-
 // MySQL configurations
 CONFIG.mysql_db_host = process.env.MYSQL_DB_HOST || '127.0.0.1'
 CONFIG.mysql_db_user = process.env.MYSQL_DB_USER || 'root'
